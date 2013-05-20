@@ -1,0 +1,8 @@
+LoadPlugin "processes"
+
+<Plugin "processes">
+    <% processes.each do |process| %>
+    Process "<%= process -%>"
+    <% end %>
+</Plugin>
+
