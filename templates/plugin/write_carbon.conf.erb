@@ -9,11 +9,11 @@
     Import "carbon_writer"
 
     <Module "carbon_writer">
-        LineReceiverHost "<%= carbon_host %>"
-        LineReceiverPort <%= carbon_port %>
+        LineReceiverHost "<%= @carbon_host %>"
+        LineReceiverPort <%= @carbon_port %>
         DifferentiateCountersOverTime true
         LowercaseMetricNames true
         TypesDB "/usr/share/collectd/types.db"
-        MetricPrefix "<%= carbon_metric_prefix %>"
+        MetricPrefix "<%= @carbon_metric_prefix %>"
     </Module>
 </Plugin>
