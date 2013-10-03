@@ -1,7 +1,7 @@
 LoadPlugin "network"
 
 <Plugin "network">
-    <% if @server != :undef %>
+    <% if scope.lookupvar('server') != :undef %>
         Server "<%= @server %>" "<%= @port %>"
     <% else %>
         Listen "127.0.0.1" "<%= @port %>"

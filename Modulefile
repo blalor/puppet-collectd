@@ -7,3 +7,5 @@ description 'Module for Collectd configuration'
 
 source 'https://github.com/blalor/puppet-collectd.git'
 project_page 'https://github.com/blalor/puppet-collectd'
+
+dependency 'puppetlabs/stdlib', '>= 4.1.0'
