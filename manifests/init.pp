@@ -3,7 +3,8 @@ class collectd (
     $version,
 ) {
     $collectd_dot_d = '/etc/collectd.d'
-    
+
+    anchor {'collectd::begin': } ->
     package {'collectd':
         ensure => $version,
     }
@@ -32,7 +33,6 @@ class collectd (
         purge   => true,
         recurse => true,
         force   => true,
-
         require => [
             File[$collectd_conf],
             Package['collectd'],
@@ -43,7 +43,7 @@ class collectd (
     service {'collectd':
         ensure  => running,
         enable  => true,
-
         require => Package['collectd'],
-    }
+    } ->
+    anchor {'collectd::end': }
 }
